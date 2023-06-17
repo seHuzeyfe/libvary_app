@@ -46,7 +46,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 - Kitap Meraklıları
 
 
-## Juriye Not
+## Jüriye Not
 
 
 
