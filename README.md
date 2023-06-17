@@ -29,10 +29,19 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 ## Ürün Özellikleri
 
+- Uygulama üzerinde kitap ilanı oluşturulması.
+- İlana kitap ile bağlantılı (Tür, Dil, Durum vb.) filtreler ekleyebilme.
+- Uygulama üzerinde arama butonu ile kitap aratabilme.
+- Uygulama üzerinde filtreleme ile kitap aratabilme veya yapılan aramanın kapsamını daraltabilme.
+- Kullanıcıların arasında özel mesaj gönderilebilmesi.
+- Kullanıcıların daha sonra kontrol edebilmek veya takip etmek için ilanları favorileyebilmeleri.
 
 
 ## Hedef Kitle
 
+- Öğrenciler
+- Akademisyenler
+- Kitap Meraklıları
 
 
 ## Juriye Not
