@@ -74,7 +74,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
   <img width="359" alt="uygulama2" src="https://github.com/seHuzeyfe/libvary_app/assets/85116009/a67927c3-af55-4fad-8df6-6064b969ae9d">
   
-- **Sprint Review**: 
+- **Sprint Review**: Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
 
 - **Sprint Retrospective:**
   
