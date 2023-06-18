@@ -55,7 +55,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 - **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 80 ile başlaması gerektiğine karar verildi.
 
 
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://docs.google.com/document/d/16ryL2Q8vN3e5w9kpaCWB5ydLbPvsUA9H/edit?usp=sharing&ouid=110883002193779834389&rtpof=true&sd=true)
+- **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://docs.google.com/document/d/16ryL2Q8vN3e5w9kpaCWB5ydLbPvsUA9H/edit?usp=sharing&ouid=110883002193779834389&rtpof=true&sd=true)
 
 - **Sprint board update**: Sprint board screenshotları:
 
