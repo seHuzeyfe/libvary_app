@@ -64,6 +64,9 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 - **Sprint board update**: Sprint board screenshotları:
 
+- ![11](https://github.com/seHuzeyfe/libvary_app/assets/85116009/267e8efd-83a6-4618-90a2-ce84483fdb6e)
+
+
 
 
 - **Ürün Durumu**: Ekran görüntüleri:
