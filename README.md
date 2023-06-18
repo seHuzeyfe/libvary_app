@@ -78,9 +78,9 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 - **Sprint Retrospective:**
 
-- Roller ile ilgili düzenleme yapılmış ve Product Owner değişmiştir.
-- Takımca gelecek sprintlerde aktifliği artırmak için planlama yapılmıştır.
-- Backlogların yetkilendirilmesi ile alakalı planlama yapılmıştır.
+ - Roller ile ilgili düzenleme yapılmış ve Product Owner değişmiştir.
+ - Takımca gelecek sprintlerde aktifliği artırmak için planlama yapılmıştır.
+ - Backlogların yetkilendirilmesi ile alakalı planlama yapılmıştır.
  
 
 ---
