@@ -45,11 +45,6 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 - Akademisyenler
 - Kitap Meraklıları
 
-
-## Jüriye Not
-
-
-
 ---
 
 # Sprint 1
