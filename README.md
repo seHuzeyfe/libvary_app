@@ -74,6 +74,8 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 
 - **Ürün Durumu**: Ekran görüntüleri:
+
+  ![uygulama](https://github.com/seHuzeyfe/libvary_app/assets/85116009/5565e142-ed97-4a6c-9cb3-a925940582ca)
   
 - **Sprint Review**: 
 
