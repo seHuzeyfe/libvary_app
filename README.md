@@ -5,8 +5,8 @@
 # Ürün İle İlgili Bilgiler
 
 ## Takım Elemanları
-- Huzeyfe Bıçakçı  : Scrum Master
-- İsmail Erdoğan   : Product Owner
+- Huzeyfe Bıçakçı  : Scrum Master, Product Owner
+- İsmail Erdoğan   : Developer
 - Emre Eyüpoğlu    : Developer
 - Eda Nur Korkusuz : Developer
 - Olgun Çelikel    : Developer
