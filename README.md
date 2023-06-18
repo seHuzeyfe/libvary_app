@@ -77,7 +77,10 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 - **Sprint Review**: Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
 
 - **Sprint Retrospective:**
-  
+
+- Roller ile ilgili düzenleme yapılmış ve Product Owner değişmiştir.
+- Takımca gelecek sprintlerde aktifliği artırmak için planlama yapılmıştır.
+- Backlogların yetkilendirilmesi ile alakalı planlama yapılmıştır.
  
 
 ---
