@@ -43,16 +43,18 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 - Öğrenciler
 - Akademisyenler
-- Kitap Meraklıları
+- Okurlar
 
 ---
 
 # Sprint 1
 
+- **Sprint Notları**: Ürünün toplam 25 Backlogu vardır bu backlogların 10'u yüksek değerli 15'i ise orta veya düşük değerlidir.Gereken backloglara   user storyler yazılmış ve puanı belirtilmiştir.Board da toplantı tarihleri ve notları bulunmaktadır.
+
 - **Sprint içinde tamamlanması tahmin edilen puan**: 80 Puan
 
 
-- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 80 ile başlaması gerektiğine karar verildi.
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır.bu backlogların 10'u 20'şer puan 15'i ise 10'ar puandır bu puan farkı taskın değerine göre belirlenmiştir.
 
 
 - **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://docs.google.com/document/d/16ryL2Q8vN3e5w9kpaCWB5ydLbPvsUA9H/edit?usp=sharing&ouid=110883002193779834389&rtpof=true&sd=true)
@@ -74,13 +76,14 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
   <img width="359" alt="uygulama2" src="https://github.com/seHuzeyfe/libvary_app/assets/85116009/a67927c3-af55-4fad-8df6-6064b969ae9d">
   
-- **Sprint Review**: Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
+- **Sprint Review**: Fikir belirlendikten sonra user storyler belirlendi.Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
 
 - **Sprint Retrospective:**
-
+  
+  - İlk haftadan itibaren düzenli toplantılar yapıp ve iletişimde kaldık böyle devam edeceğiz.
   - Roller ile ilgili düzenleme yapılmış ve Product Owner değişmiştir.
-  - Takımca gelecek sprintlerde aktifliği artırmak için planlama yapılmıştır.
-  - Backlogların yetkilendirilmesi ile alakalı planlama yapılmıştır.
+  - Takımca kod yazma aktifliğini artırmak için planlama yapılmıştır.
+  - Backlogların atanması ile alakalı kararlar alındı.
  
 
 ---
