@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/components/welcome_screen_body.dart';
+import 'package:libvary_app/View/welcome_screen/components/welcome_screen_body.dart';
 import 'package:libvary_app/size_config.dart';
 
 class WelcomeScreen extends StatelessWidget {
