@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/welcome_screen.dart';
+import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/routs.dart';
 

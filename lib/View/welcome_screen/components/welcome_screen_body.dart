@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/components/welcome_screen_content.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
+import 'welcome_screen_content.dart';
 //Düzenli kod için best practice uygulandı...
 
 class Body extends StatefulWidget {

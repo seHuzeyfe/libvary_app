@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart';
-import '../../size_config.dart';
+import 'package:libvary_app/constants.dart';
+import 'package:libvary_app/size_config.dart';
 
 class WelcomeScreenContent extends StatelessWidget {
   final String text, image;
