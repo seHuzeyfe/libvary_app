@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
-import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/routs.dart';
+import 'theme_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,17 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: theme(),
       //home: WelcomeScreen(),
       initialRoute: WelcomeScreen.routeName,
       routes: routes,
     );
   }
 }
+
+
