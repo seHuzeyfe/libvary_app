@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import "main_chat_screen.dart";
+
 class ChatScreen extends StatefulWidget {
   final String chatTitle;
 
@@ -13,6 +15,7 @@ class _ChatScreenState extends State<ChatScreen> {
   TextEditingController textEditingController = TextEditingController();
   ScrollController scrollController = ScrollController();
   bool isSent = true;
+  bool isOnline = false;
 
   void sendMessage(String message) {
     setState(() {
@@ -35,7 +38,37 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.chatTitle),
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text(
+                  widget.chatTitle.substring(0, 1),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Text(
+                widget.chatTitle,
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            CircleAvatar(
+              radius: 6.0,
+              backgroundColor: isOnline ? Colors.green : Colors.red,
+            )
+          ],
+        ),
       ),
       body: Column(
         children: [
@@ -58,7 +91,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     alignment: messageAlignment,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: isSent ? messageColor : Colors.grey[300], // Update messageColor when isSent is true
+                        color: isSent ? messageColor : Colors.grey[300],
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       padding: EdgeInsets.all(8.0),
