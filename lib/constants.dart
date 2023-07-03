@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/size_config.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
+const kPrimaryColor = Colors.black;
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
 );
-const kSecondaryColor = Color(0xFF979797);
+const kSecondaryColor = Colors.black;
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
@@ -29,7 +29,7 @@ const String kEmailNullError = "Lütfen emailinizi giriniz";
 const String kInvalidEmailError = "Lütfen geçerli bir email girin";
 const String kPassNullError = "Lütfen şifrenizi girin";
 const String kShortPassError = "Şifre çok kısa";
-const String kMatchPassError = "Şifre girdiğiniz emaille uyuşmuyor";
+const String kMatchPassError = "Girdiğiniz şifreler uyuşmuyor";
 const String kNamelNullError = "Lütfen adınızı giriniz";
 const String kPhoneNumberNullError = "Lütfen telefon numaranızı giriniz";
 const String kAddressNullError = "Lütfen adresinizi giriniz";
@@ -48,3 +48,10 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: BorderSide(color: kTextColor),
   );
 }
+
+final headStyle = TextStyle(
+  fontSize: getProportionateScreenWidth(25),
+  fontWeight: FontWeight.w600,
+  color: Colors.black,
+  height: 1.5,
+);

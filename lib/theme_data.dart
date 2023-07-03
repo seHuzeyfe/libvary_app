@@ -8,7 +8,7 @@ ThemeData theme(){
       color: Colors.white,
       elevation: 0,
       iconTheme: IconThemeData(color: Colors.black),
-      titleTextStyle: TextStyle(fontWeight: FontWeight.w500,fontSize: 12,color: Color(0XFF8B8B8B)),
+      titleTextStyle: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Color(0XFF8B8B8B)),
     ),
     scaffoldBackgroundColor: Colors.white,
     fontFamily: "Muli",
