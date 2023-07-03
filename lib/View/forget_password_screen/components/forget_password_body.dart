@@ -92,7 +92,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
             decoration: const InputDecoration(
               //dekorasyon theme dosyasının içinde düzenlendi
               labelText: "Email",
-              hintText: "Email'inizi giriniz",
+              hintText: "Emailinizi giriniz",
               suffixIcon: SuffixIcon(
                 svgIcon: "assets/icons/Mail.svg",
               ),
@@ -103,12 +103,11 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
           ),
           FormErrors(errors: errors),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
-          defaultButton(text: "Gönder", press: () {
-            if(_formKey.currentState!.validate())
-              {
-
-              }
-          }),
+          defaultButton(
+              text: "Gönder",
+              press: () {
+                if (_formKey.currentState!.validate()) {}
+              }),
           SizedBox(height: SizeConfig.screenHeight * 0.1)
         ],
       ),

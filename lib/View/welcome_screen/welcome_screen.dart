@@ -9,7 +9,7 @@ class WelcomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       body: Body(),
-      backgroundColor: Color.fromRGBO(254, 250, 224, 1),
+      backgroundColor: Colors.white,
     );
   }
 }

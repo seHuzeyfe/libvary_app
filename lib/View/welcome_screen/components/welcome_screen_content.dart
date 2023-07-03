@@ -15,7 +15,7 @@ class WelcomeScreenContent extends StatelessWidget {
           "LIBVARY",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(36),
-            color: Color.fromRGBO(212, 163, 115, 1),
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),

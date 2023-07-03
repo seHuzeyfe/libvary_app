@@ -10,12 +10,11 @@ class ForgetPasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Padding(
-            padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(75)),
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(75)),
             child: Text("Şifremi Unuttum")),
       ),
-      body: Body(
-
-      ),
+      body: Body(),
     );
   }
 }
