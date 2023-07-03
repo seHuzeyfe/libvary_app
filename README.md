@@ -102,7 +102,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 - **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır.bu backlogların 10'u 20'şer puan 15'i ise 10'ar puandır bu puan farkı taskın değerine göre belirlenmiştir. İkinci sprintte 5 adet 20 puanlık 5 adet 10 puanlık backlog olarak toplam 150 puan backlog alınmıştır.
 
-- **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats]((https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/F-49%20Toplant%C4%B1%20Notlar%C4%B1.docx))
+- **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats](https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/F-49%20Toplant%C4%B1%20Notlar%C4%B1.docx)
 
 - **Sprint board update**: Sprint board screenshotları:
 
