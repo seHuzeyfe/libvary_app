@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/forget_password_screen/forget_password_screen.dart';
 import 'package:libvary_app/View/sign_up_screen/sign_up_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
 import 'sign_in_screen_contents.dart';
+import 'package:libvary_app/navigation_bar.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -74,7 +74,7 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.03),
               GestureDetector(
                   onTap: () => Navigator.popAndPushNamed(
-                      context, ForgetPasswordScreen.routeName),
+                      context,MainNavigationBar.routeName),
                   child: Text(
                     "Giriş yapmadan devam et",
                     style: TextStyle(
