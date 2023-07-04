@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/chat_screen/main_chat_screen.dart';
-import 'package:libvary_app/constants.dart';
+import 'package:libvary_app/View/book_screen/book_screen.dart';
 import 'package:libvary_app/size_config.dart';
 
 class WelcomeScreenContent extends StatelessWidget {
@@ -46,7 +45,7 @@ class WelcomeScreenContent extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ChatListScreen(),
+                builder: (context) => BookPage(),
               ),
             );
           },
