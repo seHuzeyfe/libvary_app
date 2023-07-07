@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/book_screen/book_screen.dart';
 import 'package:libvary_app/size_config.dart';
 
@@ -45,7 +46,7 @@ class WelcomeScreenContent extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => BookPage(),
+                builder: (context) => BookAddPage(),
               ),
             );
           },
