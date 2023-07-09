@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
+import 'package:libvary_app/View/profile_screen/profil_screen.dart';
+//import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
 import 'package:libvary_app/constants.dart';
-import 'package:libvary_app/routs.dart';
+//import 'package:libvary_app/routs.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +15,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         fontFamily: "Muli",
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: kTextColor),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: WelcomeScreen(),
-      initialRoute: WelcomeScreen.routeName,
-      routes: routes,
+home: profilEkrani(),
+     // initialRoute: WelcomeScreen.routeName,
+      //routes: routes,
     );
   }
 }
