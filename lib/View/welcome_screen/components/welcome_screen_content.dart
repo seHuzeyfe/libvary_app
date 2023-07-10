@@ -40,17 +40,6 @@ class WelcomeScreenContent extends StatelessWidget {
           ),
         ),
         Spacer(flex: 1),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => BookPage(),
-              ),
-            );
-          },
-          child: Text('Go to Target Page'),
-        ),
       ],
     );
   }

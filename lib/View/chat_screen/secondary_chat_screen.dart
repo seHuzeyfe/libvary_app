@@ -120,7 +120,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       // Handle text field changes
                     },
                     decoration: InputDecoration(
-                      hintText: 'Enter a message...',
+                      hintText: 'Bir mesaj girin',
                     ),
                   ),
                 ),

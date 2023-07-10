@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:libvary_app/View/chat_screen/main_chat_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:libvary_app/View/wishlist_screen/wishlist_screen.dart';
 import 'package:libvary_app/size_config.dart';
 
 class MainNavigationBar extends StatefulWidget {
@@ -16,9 +18,9 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
   List<Widget> pageList = <Widget>[
     //Ekranların listesi
     MainScreen(),
+    ChatListScreen(),
     MainScreen(),
-    MainScreen(),
-    MainScreen(),
+    WishList(),
     MainScreen(),
   ];
   @override
