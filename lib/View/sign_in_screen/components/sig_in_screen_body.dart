@@ -3,7 +3,7 @@ import 'package:libvary_app/View/sign_up_screen/sign_up_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
 import 'sign_in_screen_contents.dart';
-import 'package:libvary_app/navigation_bar.dart';
+import 'package:libvary_app/components/navigation_bar.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

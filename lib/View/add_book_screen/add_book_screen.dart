@@ -24,6 +24,9 @@ enum BookLanguage {
 }
 
 class BookAddPage extends StatefulWidget {
+  static String routeName = "/BookAddPage";
+  const BookAddPage({super.key});
+
   @override
   _BookAddPageState createState() => _BookAddPageState();
 }
@@ -50,13 +53,16 @@ class _BookAddPageState extends State<BookAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 36.0),
+              SizedBox(height: 10.0),
               GestureDetector(
                 onTap: () {
                   showDialog(
@@ -93,17 +99,17 @@ class _BookAddPageState extends State<BookAddPage> {
                     color: Colors.grey[200],
                     image: _imageFile != null
                         ? DecorationImage(
-                      image: FileImage(_imageFile!),
-                      fit: BoxFit.cover,
-                    )
+                            image: FileImage(_imageFile!),
+                            fit: BoxFit.cover,
+                          )
                         : null,
                   ),
                   child: _imageFile == null
                       ? Icon(
-                    Icons.camera_alt,
-                    size: 80,
-                    color: Colors.grey[400],
-                  )
+                          Icons.camera_alt,
+                          size: 80,
+                          color: Colors.grey[400],
+                        )
                       : null,
                 ),
               ),

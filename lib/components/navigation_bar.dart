@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/size_config.dart';
+import '../View/chat_screen/main_chat_screen.dart';
 
 class MainNavigationBar extends StatefulWidget {
   static String routeName = "/MainNavigationBar";
@@ -16,7 +18,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
   List<Widget> pageList = <Widget>[
     //Ekranların listesi
     MainScreen(),
-    MainScreen(),
+    ChatListScreen(),
     MainScreen(),
     MainScreen(),
     MainScreen(),
@@ -30,10 +32,10 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
         child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
           BottomNavigationBar(
             elevation: 200,
-            backgroundColor: Colors.black26,
+            backgroundColor: Colors.white,
             unselectedItemColor: Colors.white70,
-            selectedItemColor: Colors.black54,
-            selectedIconTheme: IconThemeData(color: Colors.black54),
+            selectedItemColor: Colors.black,
+            selectedIconTheme: IconThemeData(color: Colors.black),
             currentIndex: pageIndex,
             onTap: (value) {
               setState(() {
@@ -85,10 +87,12 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                             MaterialStateProperty.all(Size.fromHeight(0)),
                         elevation: MaterialStateProperty.all(5),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.white30),
+                            MaterialStateProperty.all(Colors.white),
                         shape: MaterialStateProperty.all(
                             CircleBorder(eccentricity: 0))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.popAndPushNamed(context, BookAddPage.routeName);
+                    },
                     child: SuffixIconNavBar(
                       svgIcon: "assets/icons/navbar_new.svg",
                       height: getProportionateScreenHeight(55),
