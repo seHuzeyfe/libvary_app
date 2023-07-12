@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/constants.dart';
 import '../../../size_config.dart';
+import '../../../utilities/google_sign_in.dart';
 import '../../contents.dart';
 import '../../sign_in_screen/components/sign_in_screen_contents.dart';
 
@@ -82,7 +83,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   }
                 }),
             SizedBox(height: getProportionateScreenHeight(40)),
-            GoogleSign(icon: "assets/icons/google-icon.svg", press: () {}),
+            GoogleSign(),
           ],
         ));
   }

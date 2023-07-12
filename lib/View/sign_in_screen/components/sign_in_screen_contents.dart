@@ -242,22 +242,4 @@ class _SignFormState extends State<SignForm> {
   }
 }
 
-class GoogleSign extends StatelessWidget {
-  const GoogleSign({super.key, required this.icon, required this.press});
-  final String icon;
-  final Function press;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press(),
-      child: Container(
-        padding: EdgeInsets.all(getProportionateScreenWidth(5)),
-        height: getProportionateScreenHeight(45),
-        width: getProportionateScreenWidth(45),
-        decoration:
-            BoxDecoration(color: Color(0xFFF5F6F9), shape: BoxShape.circle),
-        child: SvgPicture.asset(icon),
-      ),
-    );
-  }
-}
+

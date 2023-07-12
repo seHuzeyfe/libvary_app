@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/sign_in_screen/sign_in_screen.dart';
+import 'package:libvary_app/components/navigation_bar.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
+import '../../../utilities/google_sign_in.dart';
 import '../../contents.dart';
 import 'welcome_screen_content.dart';
 //Düzenli kod için best practice uygulandı...
@@ -68,7 +71,11 @@ class _BodyState extends State<Body> {
                       ),
                       Spacer(flex: 3),
                       defaultButton(text: "Devam Et", press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
+                        if(isSignedIn()) //giriş yapıldı mı kontrrolü
+                          {
+                            Navigator.pushNamed(context, MainNavigationBar.routeName);
+                          }
+                        else Navigator.pushNamed(context, SignInScreen.routeName);
                       }),
                       Spacer(),
                     ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:libvary_app/View/sign_up_screen/sign_up_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
+import '../../../utilities/google_sign_in.dart';
 import 'sign_in_screen_contents.dart';
 import 'package:libvary_app/components/navigation_bar.dart';
 
@@ -36,10 +37,7 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               SignForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.02),
-              GoogleSign(
-                icon: "assets/icons/google-icon.svg",
-                press: () {},
-              ),
+              GoogleSign(),
               SizedBox(height: SizeConfig.screenHeight * 0.03),
               Padding(
                 padding: const EdgeInsets.only(left: 25, right: 15),
