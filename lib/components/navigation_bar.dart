@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/size_config.dart';
+import 'package:libvary_app/utilities/google_sign_in.dart';
 import '../View/chat_screen/main_chat_screen.dart';
 
 class MainNavigationBar extends StatefulWidget {
@@ -34,6 +36,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
             elevation: 200,
             backgroundColor: Colors.white,
             unselectedItemColor: Colors.white70,
+            selectedFontSize: 0,
             selectedItemColor: Colors.black,
             selectedIconTheme: IconThemeData(color: Colors.black),
             currentIndex: pageIndex,
@@ -47,14 +50,14 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               BottomNavigationBarItem(
                   icon: SuffixIconNavBar(
                     svgIcon: "assets/icons/navbar_home.svg",
-                    height: getProportionateScreenHeight(28),
+                    height: getProportionateScreenHeight(20),
                   ),
-                  label: "Ana Sayfa"),
+                  label: ""),
               BottomNavigationBarItem(
                   icon: SuffixIconNavBar(
                       svgIcon: "assets/icons/navbar_chats.svg",
-                      height: getProportionateScreenHeight(28)),
-                  label: "Mesajlar"),
+                      height: getProportionateScreenHeight(20)),
+                  label: ""),
               BottomNavigationBarItem(
                   icon: SuffixIconNavBar(
                     svgIcon: "",
@@ -64,14 +67,14 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               BottomNavigationBarItem(
                   icon: SuffixIconNavBar(
                       svgIcon: "assets/icons/navbar_wishlist.svg",
-                      height: getProportionateScreenHeight(28)),
-                  label: "Favoriler"),
+                      height: getProportionateScreenHeight(25)),
+                  label: ""),
               BottomNavigationBarItem(
                   icon: CircleAvatar(
                       radius: 15,
-                      backgroundImage:
-                          AssetImage("assets/images/Profile Image.png")),
-                  label: "Profil"),
+                      backgroundImage: NetworkImage(getUserInfo("photo")),
+                          ),
+                  label: ""),
             ],
           ),
           Padding(
@@ -95,13 +98,9 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                     },
                     child: SuffixIconNavBar(
                       svgIcon: "assets/icons/navbar_new.svg",
-                      height: getProportionateScreenHeight(55),
+                      height: getProportionateScreenHeight(45),
                     )),
-                SizedBox(height: getProportionateScreenHeight(6)),
-                Text("Bağışla",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: getProportionateScreenWidth(15))),
+                SizedBox(height: getProportionateScreenHeight(15)),
                 SizedBox(height: getProportionateScreenHeight(1)),
               ],
             ),

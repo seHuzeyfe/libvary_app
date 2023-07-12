@@ -22,6 +22,13 @@ Future<UserCredential> signInWithGoogle() async {
   return await FirebaseAuth.instance.signInWithCredential(credential);
 }
 
+ signOutWithGoogle() async {
+  await FirebaseAuth.instance.signOut();
+  await GoogleSignIn().signOut();
+ }
+
+
+
 class GoogleSign extends StatefulWidget {
   const GoogleSign({super.key});
 
@@ -58,4 +65,32 @@ class _GoogleSignState extends State<GoogleSign> {
    return (FirebaseAuth.instance.currentUser != null);
  }
 
+ getUserInfo (String request){
+   var  user= FirebaseAuth.instance.currentUser;
+   if ( user != null) {
+       for (final providerProfile in user.providerData) {
+       // ID of the provider (google.com, apple.cpm, etc.)
+       final provider = providerProfile.providerId;
+
+       // UID specific to the provider
+       final uid = providerProfile.uid;
+
+       // Name, email address, and profile photo URL
+       final name = providerProfile.displayName;
+       final emailAddress = providerProfile.email;
+       final profilePhoto = providerProfile.photoURL;
+
+        if(request == "photo" )
+          {
+            return profilePhoto;
+          }
+        else if (request == "name")
+          {
+            return name;
+          }
+        else
+          return emailAddress;
+       }
+   }
+}
 
