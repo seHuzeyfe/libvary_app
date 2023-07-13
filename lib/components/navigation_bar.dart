@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:libvary_app/View/wishlist_screen/wishlist_screen.dart';
 import 'package:libvary_app/size_config.dart';
 import 'package:libvary_app/utilities/google_sign_in.dart';
 import '../View/chat_screen/main_chat_screen.dart';
@@ -22,7 +23,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
     MainScreen(),
     ChatListScreen(),
     MainScreen(),
-    MainScreen(),
+    WishList(),
     MainScreen(),
   ];
   @override
