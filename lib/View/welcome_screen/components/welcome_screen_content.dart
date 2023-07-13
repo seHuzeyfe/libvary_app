@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
 
 class WelcomeScreenContent extends StatelessWidget {
   final String text, image;
-  const WelcomeScreenContent(
-      {super.key, required this.text, required this.image});
+
+  const WelcomeScreenContent({
+    Key? key,
+    required this.text,
+    required this.image,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,25 +19,28 @@ class WelcomeScreenContent extends StatelessWidget {
           "LIBVARY",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(36),
-            color: Color.fromRGBO(212, 163, 115, 1),
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
         Spacer(flex: 1),
-        Text(text,
-            textAlign: TextAlign.center,
-            selectionColor: Color.fromARGB(255, 198, 172, 143)),
+        Text(
+          text,
+          textAlign: TextAlign.center,
+          selectionColor: Color.fromARGB(255, 198, 172, 143),
+        ),
         Spacer(flex: 2),
         Container(
           width: 250,
-          //decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
           child: Image.asset(
             image,
             height: getProportionateScreenHeight(300),
             width: getProportionateScreenWidth(300),
           ),
-        )
+        ),
+        Spacer(flex: 1),
       ],
     );
   }
 }
+

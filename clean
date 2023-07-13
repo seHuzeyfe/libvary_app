@@ -1,0 +1,268 @@
+[33mcommit 973536d06e37528ed0023a40f8bf831de771f898[m[33m ([m[1;36mHEAD -> [m[1;32mprofile_screen[m[33m)[m
+Author: Eda <korkusuzeda2706@gmail.com>
+Date:   Sun Jul 9 22:14:56 2023 +0300
+
+    Profil Ekrani Tamamlandi
+
+[33mcommit bc62de72d0c95ac69f2c8248e605a923b27fc870[m
+Author: Eda <korkusuzeda2706@gmail.com>
+Date:   Tue Jun 27 18:25:16 2023 +0300
+
+    Profil ekranı için oluşturuldu
+
+[33mcommit ce8192d61bf971e1bf945e0ca55c67acda841929[m[33m ([m[1;32mmain[m[33m)[m
+Merge: a213722 fae59d0
+Author: Huzeyfe Bıçakçı <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 26 15:23:22 2023 +0300
+
+    Merge pull request #2 from seHuzeyfe/feature/signInScreen
+    
+    sign in ekranı oluşturuldu
+
+[33mcommit fae59d025b11cdee85b1906d571a6e3fd0c121cd[m
+Author: Huzeyfe Bicakci <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 26 15:15:00 2023 +0300
+
+    sign in ekranı oluşturuldu
+
+[33mcommit a2137227f5ca1ae18dc65666409e76396aa3849e[m
+Merge: d09ac60 7ab6183
+Author: Huzeyfe Bıçakçı <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 26 03:50:23 2023 +0300
+
+    Merge pull request #1 from seHuzeyfe/feature/welcomeScreen
+    
+    Welcome page tamamlandı
+
+[33mcommit 7ab618336d16fcab4b300ad8a3c7fe67e5b5e91e[m[33m ([m[1;31morigin/feature/welcomeScreen[m[33m)[m
+Author: Huzeyfe Bicakci <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 26 03:44:15 2023 +0300
+
+    Welcome page tamamlandı
+
+[33mcommit d09ac605e57e2e662d99961b90720d4b8d8e2a45[m
+Author: Huzeyfe Bıçakçı <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 19 04:27:13 2023 +0300
+
+    Sprint 1 Readme complated
+
+[33mcommit 44a430600243e1267843446446bdbb1c02ed8bd7[m
+Merge: d408e1f 0952c67
+Author: Huzeyfe Bicakci <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 19 03:53:27 2023 +0300
+
+    Merge branch 'main' of github.com:seHuzeyfe/libvary_app
+
+[33mcommit d408e1fea10fbdb260c21f62cb2e0d0f66f1ed4d[m
+Author: Huzeyfe Bicakci <huzeyfebicakci@gmail.com>
+Date:   Mon Jun 19 03:50:43 2023 +0300
+
+    log in page created
+
+[33mcommit 0952c678f451ea36c07d47e1561d1b0ae30a6098[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Mon Jun 19 00:08:17 2023 +0300
+
+    Update README.md
+
+[33mcommit 9cc9a918971c52bd6fc0e7383dc7256cc063fd2d[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Mon Jun 19 00:06:32 2023 +0300
+
+    Update README.md
+
+[33mcommit 0636958d9d078e8bcd71ea6a33ca4463de6f601a[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Mon Jun 19 00:06:20 2023 +0300
+
+    Update README.md
+
+[33mcommit 64c6cb4a824bfe98b41a37bfb5a67668dca48f2e[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Mon Jun 19 00:04:32 2023 +0300
+
+    Update README.md
+    
+    retrospective eklendi
+
+[33mcommit 9d34dbc79eda1e43caa9e9b98872f17e8b06725d[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:58:20 2023 +0300
+
+    Update README.md
+
+[33mcommit 5bda321b582727a7695316344b071e7a6eab6f0e[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:54:57 2023 +0300
+
+    Update README.md
+
+[33mcommit e58566a457cd0c9662ce18d6e681ce37a39465db[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:50:43 2023 +0300
+
+    Update README.md
+    
+    daily scrum linki eklendi
+
+[33mcommit fce229526e14be4a9e69db5307a1f82d0e1aba9f[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:46:28 2023 +0300
+
+    Update README.md
+
+[33mcommit 0ab886a65bcade93a76e7cc3a40aa378211ee6ff[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:41:38 2023 +0300
+
+    Update README.md
+    
+    uygulama görsel 2 eklendi
+
+[33mcommit 76377cc822803e230a4897a0c78d191027d6fa49[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:40:51 2023 +0300
+
+    Update README.md
+    
+    uygulama görüntüsü eklendi
+
+[33mcommit bbc61c53937053e0044f8ced05badfd06800c69c[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:39:47 2023 +0300
+
+    Update README.md
+    
+    sprint ss'leri yüklendi
+
+[33mcommit d857f5a2a641df8609d56b084baaa04d1ee20ac4[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:38:47 2023 +0300
+
+    Update README.md
+
+[33mcommit d111101a2c8524927122d40f306cb2bf58d1994d[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:36:50 2023 +0300
+
+    Update README.md
+
+[33mcommit fce0bb66bb81430126621b3a76ad3380eb6b72dd[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:34:14 2023 +0300
+
+    Update README.md
+
+[33mcommit fa26796a6fccfa0bdbde1e09c2c346806bcec44f[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:33:59 2023 +0300
+
+    Update README.md
+    
+    .
+
+[33mcommit aedb3b1d6a564179109368748d17ff7330a7827d[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:32:27 2023 +0300
+
+    Update README.md
+    
+    görsel eklendi
+
+[33mcommit 9f62379953de1b7ad4592257297cd1b0d04ee545[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sun Jun 18 23:16:32 2023 +0300
+
+    Update README.md
+    
+    tamamlanması gereken puan eklendi
+
+[33mcommit 673b5842e89343d50018519e71ff6cb9dd90fd3f[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:38:57 2023 +0300
+
+    Update README.md
+    
+    imla
+
+[33mcommit 2d262394c6e1295b354607d61c3abde5cf18361b[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:37:23 2023 +0300
+
+    Update README.md
+    
+    ikinci kısma product backlog url eklendi
+
+[33mcommit 5c1785135dad87aa840cbf0f240930f324c2175d[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:36:25 2023 +0300
+
+    Update README.md
+    
+    imla
+
+[33mcommit 4bb525284314f9da4bd23b3a2d607072886e3a80[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:35:38 2023 +0300
+
+    Update README.md
+    
+    link eklendi
+
+[33mcommit 662d312109b49bc57bd7b4f2f15bd2dc43977bd5[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:25:16 2023 +0300
+
+    Update README.md
+    
+    ürün özellikleri ve hedef kitle eklendi
+
+[33mcommit 76970f1861f0556d2dde2ee5093bc8b59a184fd6[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:07:16 2023 +0300
+
+    Update README.md
+    
+    imla
+
+[33mcommit 6dfeb56aa39cf2a0a86b209a0c978e3aed68dcc3[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 23:06:31 2023 +0300
+
+    Update README.md
+    
+    uygulama birincil ve ikincil fonksiyonları eklendi
+
+[33mcommit c2826d8f21002cdddd6f9ed6b9fcd8d9b0b71eb6[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Sat Jun 17 22:49:47 2023 +0300
+
+    Update README.md
+    
+    ürün açıklaması eklendi
+
+[33mcommit 6e6a6477117c38388317fa96966529e2aa5b131f[m
+Author: Emre Eyüpoğlu <metro.1997@hotmail.com>
+Date:   Fri Jun 16 23:30:47 2023 +0300
+
+    Update README.md
+    
+    ürün ismi eklendi
+
+[33mcommit 0271dc7fec5963d6713b05c33ae7e2c85a6f338c[m
+Author: Huzeyfe Bıçakçı <huzeyfebicakci@gmail.com>
+Date:   Thu Jun 8 03:27:47 2023 +0300
+
+    Update README.md
+
+[33mcommit 59e5c5eb090b9c00c1c9c2dd57fcc6c6e79799f9[m
+Author: Huzeyfe Bicakci <huzeyfebicakci@gmail.com>
+Date:   Thu Jun 8 03:10:25 2023 +0300
+
+    Flutter Project Created
+
+[33mcommit f6dbd91ed4a2822356bc7c57b79eb01a71f12e8b[m
+Author: Huzeyfe Bıçakçı <huzeyfebicakci@gmail.com>
+Date:   Thu Jun 8 02:24:48 2023 +0300
+
+    Initial commit

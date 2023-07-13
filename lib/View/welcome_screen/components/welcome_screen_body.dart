@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:libvary_app/View/sign_in_screen/sign_in_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
+import '../../contents.dart';
 import 'welcome_screen_content.dart';
 //Düzenli kod için best practice uygulandı...
 
@@ -65,7 +67,9 @@ class _BodyState extends State<Body> {
                         ),
                       ),
                       Spacer(flex: 3),
-                      WelcomeScreenButton(text: "Devam Et", press: () {}),
+                      defaultButton(text: "Devam Et", press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      }),
                       Spacer(),
                     ],
                   ),
@@ -89,30 +93,4 @@ class _BodyState extends State<Body> {
   }
 }
 
-class WelcomeScreenButton extends StatelessWidget {
-  const WelcomeScreenButton(
-      {super.key, required this.text, required this.press});
-  final String text;
-  final Function press;
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: getProportionateScreenHeight(56),
-      child: TextButton(
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20))),
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Color.fromARGB(200, 10, 9, 8)),
-          ),
-          onPressed: () {},
-          child: Text(
-            text,
-            style: TextStyle(
-                fontSize: getProportionateScreenWidth(18), color: Colors.white),
-          )),
-    );
-  }
-}

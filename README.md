@@ -6,10 +6,10 @@
 
 ## Takım Elemanları
 - Huzeyfe Bıçakçı  : Scrum Master, Product Owner
-- İsmail Erdoğan   : Developer
 - Emre Eyüpoğlu    : Developer
 - Eda Nur Korkusuz : Developer
 - Olgun Çelikel    : Developer
+- İsmail Erdoğan   : Aktif Değil
 
 ## Ürün İsmi
 
@@ -93,3 +93,43 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 [Flutter Team 49 Miro Backlog Board](https://miro.com/app/board/uXjVMB1ZXfI=/)
 
 ---
+
+# Sprint 2
+
+- **Sprint Notları**: Ürünün 25 Backlogundan 13 tanesi ikinci sprintte alınmıştır ve 11 tanesi tamamlanıp 2 tanesi tamamlanamamıştır. Bu backlog taskları genel olarak ekranların kodlanması üzerinedir.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 150 Puan
+
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır.bu backlogların 10'u 20'şer puan 15'i ise 10'ar puandır bu puan farkı taskın değerine göre belirlenmiştir. İkinci sprintte 5 adet 20 puanlık 5 adet 10 puanlık backlog olarak toplam 150 puan backlog alınmıştır.
+
+- **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats](https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/F-49%20Toplant%C4%B1%20Notlar%C4%B1.docx)
+
+- **Sprint board update**: Sprint board screenshotları:
+
+ ![33](https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/miro%20sprint%20two%201.png)
+ 
+ ![11](https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/miro%20sprint%20two%202.png)
+
+
+- **Ürün Durumu**: Ekran görüntüleri:
+
+  ![uygulama](https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/1.png)
+
+  <img width="359" alt="uygulama" src="https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/2.png">
+
+   <img width="359" alt="uygulama" src="https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/3.jpeg">
+
+   <img width="359" alt="uygulama" src="https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/4.jpeg">
+
+   <img width="359" alt="uygulama" src="https://github.com/seHuzeyfe/libvary_app/blob/main/readme_assets/5.jpeg">
+  
+- **Sprint Review**: İkinci sprintte uygulamanın bütün ekranlarının kodlanması kararlaştırıldı ve %90'ı tamamlandı. Tasarım kalıbı olarak MVC uygulandı ve mümkün olduğunca temiz kod yazılmaya çalışıldı.Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
+
+- **Sprint Retrospective:**
+
+  - Takımdaki bir kişi aktif olmadığı için takımla olan ilişiği kesildi.
+  - Önceki sprinte göre kod yazma aktifliği arttı herkes kod yazmaya başladı.
+  - İkinci sprintte iletişimin yetersiz olduğu görüldü.
+  - Kod yazma hızının olması gerekenden yavaş olduğu gözlemlendi.
+  - Uygulamanın yapımı istikrarlı bir şekilde devam ediyor takımdaki herkesin daha fazla zaman ayırıp son sprintte uygulamayı tamamlanmış bir şekilde teslim edeceğimize inanıyoruz.
+ 
