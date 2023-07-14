@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
+import 'package:libvary_app/profile_Screen/profil_ekrani.dart';
 import 'package:libvary_app/routs.dart';
 import 'components/theme_data.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,10 +22,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: theme(),
       //home: WelcomeScreen(),
-      initialRoute: WelcomeScreen.routeName,
-      routes: routes,
+//      initialRoute: WelcomeScreen.routeName,
+  //    routes: routes,
+      home: profilEkrani(),
     );
   }
 }
+
 
 
