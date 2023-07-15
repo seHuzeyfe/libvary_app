@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../utilities/google_sign_in.dart';
 
-class profilEkrani extends StatefulWidget {
+import '../../utilities/google_sign_in.dart';
+import '../sign_in_screen/sign_in_screen.dart';
+
+
+class ProfileScreen extends StatefulWidget {
   static String routeName = "/ProfileScreen";
-  const profilEkrani({Key? key}) : super(key: key);
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<profilEkrani> createState() => _profilEkraniState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _profilEkraniState extends State<profilEkrani> {
+class _ProfileScreenState extends State<ProfileScreen> {
 
   PickedFile? _imageFile;
   final ImagePicker _picker=ImagePicker();
@@ -44,7 +47,7 @@ class _profilEkraniState extends State<profilEkrani> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding:EdgeInsets.all(20.0),
+                  padding:EdgeInsets.all(15.0),
                   child: Text(
                     'Kategoriler',
                     style: TextStyle(
@@ -242,7 +245,8 @@ class _profilEkraniState extends State<profilEkrani> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ProfileButton(),
+               SignOutButton(),
+                SignInButton(),
               ],
             ),
           ),
@@ -253,7 +257,7 @@ class _profilEkraniState extends State<profilEkrani> {
   Widget imageProfile(){
     return Center(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 60, 0, 10),
+        padding: EdgeInsets.fromLTRB(0, 35, 0, 10),
         child: Stack(
           children: [
             CircleAvatar(
@@ -347,16 +351,16 @@ class _profilEkraniState extends State<profilEkrani> {
   }
 }
 
-class ProfileButton extends StatefulWidget {
+class SignOutButton extends StatefulWidget {
   final String text = "";
   final String isSigned = "";
-  const ProfileButton({super.key});
+  const SignOutButton({super.key});
 
   @override
-  State<ProfileButton> createState() => _ProfileButtonState();
+  State<SignOutButton> createState() => _SignOutButton();
 }
 
-class _ProfileButtonState extends State<ProfileButton> {
+class _SignOutButton extends State<SignOutButton> {
   @override
   Widget build(BuildContext context) {
     return Visibility(
@@ -364,11 +368,11 @@ class _ProfileButtonState extends State<ProfileButton> {
       child: ElevatedButton(
         onPressed: ()async{
           await signOutWithGoogle();
-          //Navigator.pushNamed(context, SignInScreen.routeName);
+          Navigator.pushNamed(context, SignInScreen.routeName);
         },
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
@@ -377,6 +381,42 @@ class _ProfileButtonState extends State<ProfileButton> {
         ),
         child: Text(
           'Çıkış Yap',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SignInButton extends StatefulWidget {
+  const SignInButton({super.key});
+
+  @override
+  State<SignInButton> createState() => _SignInButtonState();
+}
+
+class _SignInButtonState extends State<SignInButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: !isUserSignedIn(),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, SignInScreen.routeName);
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ) ,
+          ),
+        ),
+        child: Text(
+          'Giriş Yap',
           style: TextStyle(
             color: Colors.black,
           ),
