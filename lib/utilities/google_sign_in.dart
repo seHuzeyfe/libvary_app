@@ -11,7 +11,7 @@ Future<UserCredential> signInWithGoogle() async {
 
   // Obtain the auth details from the request
   final GoogleSignInAuthentication? googleAuth =
-      await googleUser?.authentication;
+  await googleUser?.authentication;
 
   // Create a new credential
   final credential = GoogleAuthProvider.credential(
@@ -58,7 +58,7 @@ class _GoogleSignState extends State<GoogleSign> {
         height: getProportionateScreenHeight(45),
         width: getProportionateScreenWidth(45),
         decoration:
-            BoxDecoration(color: Color(0xFFF5F6F9), shape: BoxShape.circle),
+        BoxDecoration(color: Color(0xFFF5F6F9), shape: BoxShape.circle),
         child: SvgPicture.asset("assets/icons/google-icon.svg"),
       ),
     );
