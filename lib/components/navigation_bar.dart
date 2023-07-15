@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/size_config.dart';
 import 'package:libvary_app/utilities/google_sign_in.dart';
 import '../View/chat_screen/main_chat_screen.dart';
+import '../profile_Screen/profil_ekrani.dart';
 
 class MainNavigationBar extends StatefulWidget {
   static String routeName = "/MainNavigationBar";
@@ -23,7 +24,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
     ChatListScreen(),
     MainScreen(),
     MainScreen(),
-    MainScreen(),
+    profilEkrani(),
   ];
   @override
   Widget build(BuildContext context) {

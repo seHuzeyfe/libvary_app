@@ -71,7 +71,7 @@ class _BodyState extends State<Body> {
                       ),
                       Spacer(flex: 3),
                       defaultButton(text: "Devam Et", press: () {
-                        if(isSignedIn()) //giriş yapıldı mı kontrrolü
+                        if(isUserSignedIn()) //giriş yapıldı mı kontrrolü
                           {
                             Navigator.pushNamed(context, MainNavigationBar.routeName);
                           }
