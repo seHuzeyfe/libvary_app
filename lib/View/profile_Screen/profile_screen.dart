@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -260,28 +261,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: EdgeInsets.fromLTRB(0, 35, 0, 10),
         child: Stack(
           children: [
-            CircleAvatar(
-              radius: 40,
-              backgroundImage: _imageFile==null
-                  ?AssetImage('assets/images/profile_screen.png')
-                  :FileImage(File(_imageFile!.path)) as ImageProvider,
-            ),
-            Positioned(
-              bottom: -10,
-              right: -5,
-              child: IconButton(
-                onPressed: (){
-                  showModalBottomSheet(
-                    context: context,
-                    builder: ((build)=> bottomSheet()),
-                  );
-                },
-                icon: Icon(Icons.add_a_photo,
-                  color: Colors.grey,
-                ),
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: _imageFile==null
+                    ?AssetImage('assets/images/profile_screen.png')
+                    :FileImage(File(_imageFile!.path)) as ImageProvider,
               ),
             ),
-          ],
+        Positioned(
+          right: -2,
+          bottom: 6,
+          child: SizedBox(
+            height: 37,
+            width: 37,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                  side: BorderSide(color: Colors.white),
+                ),
+                foregroundColor: Colors.white,
+                backgroundColor: Color(0xFFF5F6F9),
+              ),
+              onPressed: () {},
+              child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+            ),
+          ),
+        )],
         ),
       ),
     );

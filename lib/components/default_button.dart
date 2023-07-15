@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../size_config.dart';
 
-class defaultButton extends StatelessWidget {
-  const defaultButton({super.key, required this.text, required this.press});
+class DefaultButton extends StatelessWidget {
+  const DefaultButton({super.key, required this.text, required this.press});
   final String text;
   final Function press;
 
@@ -17,7 +17,7 @@ class defaultButton extends StatelessWidget {
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),
             backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.black),
+            MaterialStateProperty.all<Color>(Colors.black),
           ),
           onPressed: () {
             press();

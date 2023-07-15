@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/constants.dart';
+import '../../../components/default_button.dart';
 import '../../../size_config.dart';
 import '../../../utilities/google_sign_in.dart';
-import '../../contents.dart';
 import '../../sign_in_screen/components/sign_in_screen_contents.dart';
 
 class Body extends StatefulWidget {
@@ -75,7 +75,7 @@ class _SignUpFormState extends State<SignUpForm> {
             SizedBox(height: getProportionateScreenHeight(30)),
             FormErrors(errors: errors),
             SizedBox(height: getProportionateScreenHeight(30)),
-            defaultButton(
+            DefaultButton(
                 text: "Devam Et",
                 press: () {
                   if (_formKey.currentState!.validate()) {

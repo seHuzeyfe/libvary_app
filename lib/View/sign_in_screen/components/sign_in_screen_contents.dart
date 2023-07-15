@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/size_config.dart';
+import '../../../components/default_button.dart';
 import '../../../constants.dart';
-import '../../contents.dart';
 import '../../forget_password_screen/forget_password_screen.dart';
+
 
 final List<String> errors = [];
 final _formKey = GlobalKey<FormState>();
@@ -87,7 +88,7 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
-          defaultButton(
+          DefaultButton(
               text: "Giriş Yap",
               press: () {
                 if (_formKey.currentState!.validate()) {

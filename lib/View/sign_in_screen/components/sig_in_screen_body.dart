@@ -4,7 +4,7 @@ import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
 import '../../../utilities/google_sign_in.dart';
 import 'sign_in_screen_contents.dart';
-import 'package:libvary_app/components/navigation_bar.dart';
+import 'package:libvary_app/navigation_bar.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

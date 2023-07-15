@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/size_config.dart';
+import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../sign_in_screen/components/sign_in_screen_contents.dart';
-import 'package:libvary_app/View/contents.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -103,7 +103,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
           ),
           FormErrors(errors: errors),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
-          defaultButton(
+          DefaultButton(
               text: "Gönder",
               press: () {
                 if (_formKey.currentState!.validate()) {}
