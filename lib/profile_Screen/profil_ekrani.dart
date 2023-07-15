@@ -1,13 +1,21 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 627b3813e501c9a619642bb5198664445dafd534
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import '../utilities/google_sign_in.dart';
 
 class profilEkrani extends StatefulWidget {
   static String routeName = "/ProfileScreen";
+=======
+
+class profilEkrani extends StatefulWidget {
+>>>>>>> 627b3813e501c9a619642bb5198664445dafd534
   const profilEkrani({Key? key}) : super(key: key);
 
   @override
@@ -239,11 +247,38 @@ class _profilEkraniState extends State<profilEkrani> {
               ),
             ),
             const SizedBox(height: 30),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 627b3813e501c9a619642bb5198664445dafd534
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+<<<<<<< HEAD
                   ProfileButton(),
+=======
+                  ElevatedButton(
+                      onPressed: ()async{
+                        await FirebaseAuth.instance.signOut();
+                      },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ) ,
+                      ),
+                    ),
+                      child: Text(
+                        'Çıkış Yap',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                  ),
+>>>>>>> 627b3813e501c9a619642bb5198664445dafd534
                 ],
               ),
             ),
@@ -347,6 +382,7 @@ class _profilEkraniState extends State<profilEkrani> {
     });
   }
 }
+<<<<<<< HEAD
 
 class ProfileButton extends StatefulWidget {
   final String text = "";
@@ -386,3 +422,5 @@ class _ProfileButtonState extends State<ProfileButton> {
     );
   }
 }
+=======
+>>>>>>> 627b3813e501c9a619642bb5198664445dafd534
