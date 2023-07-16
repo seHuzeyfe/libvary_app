@@ -51,7 +51,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 - **Sprint Notları**: Ürünün toplam 25 Backlogu vardır bu backlogların 10'u yüksek değerli 15'i ise orta veya düşük değerlidir.Gereken backloglara   user storyler yazılmış ve puanı belirtilmiştir.Board da toplantı tarihleri ve notları bulunmaktadır.
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 80 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 70 Puan
 
 
 - **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır.bu backlogların 10'u 20'şer puan 15'i ise 10'ar puandır bu puan farkı taskın değerine göre belirlenmiştir.
@@ -76,11 +76,11 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
   <img width="359" alt="uygulama2" src="https://github.com/seHuzeyfe/libvary_app/assets/85116009/a67927c3-af55-4fad-8df6-6064b969ae9d">
   
-- **Sprint Review**: Fikir belirlendikten sonra user storyler belirlendi.Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
+- **Sprint Review**: Fikir belirlendikten sonra user storyler belirlendi. Uygulamanın genel hatlarıyla temel sayfaları tasarlandı, kullanıcı giriş sayfası kodlandı, veritabanı olarak Firebase kullanılması kararlaştırıldı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
 
 - **Sprint Retrospective:**
   
-  - İlk haftadan itibaren düzenli toplantılar yapıp ve iletişimde kaldık böyle devam edeceğiz.
+  - İlk haftadan itibaren düzenli toplantılar yapıp iletişimde kaldık ve böyle devam edeceğiz.
   - Roller ile ilgili düzenleme yapılmış ve Product Owner değişmiştir.
   - Takımca kod yazma aktifliğini artırmak için planlama yapılmıştır.
   - Backlogların atanması ile alakalı kararlar alındı.
@@ -133,3 +133,43 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
   - Kod yazma hızının olması gerekenden yavaş olduğu gözlemlendi.
   - Uygulamanın yapımı istikrarlı bir şekilde devam ediyor takımdaki herkesin daha fazla zaman ayırıp son sprintte uygulamayı tamamlanmış bir şekilde teslim edeceğimize inanıyoruz.
  
+
+---
+
+## Product Backlog URL
+
+[Flutter Team 49 Miro Backlog Board](https://miro.com/app/board/uXjVMB1ZXfI=/)
+
+---
+
+# Sprint 3
+
+- **Sprint Notları**: Ürünün 25 Backlogundan 10 tanesi üçüncü sprintte alınmıştır ve 7 tanesi tamamlanıp 3 tanesi tamamlanamamıştır.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 130 Puan
+
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 350 puanlık backlog bulunmaktadır.bu backlogların 10'u 20'şer puan 15'i ise 10'ar puandır bu puan farkı taskın değerine göre belirlenmiştir. Üçüncü sprintte 3 adet 20 puanlık 7 adet 10 puanlık backlog olarak toplam 130 puan backlog alınmıştır.
+
+- **Daily Scrum**: Daily Scrum toplantıları metinsel olarak Whatsapp ve Discord üzerinden, sesli olarak da Discord üzerinden gerçekleştirilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://docs.google.com/document/d/1I5wPvbKupYmQwlrZoDw-qpEFVy2fm7I_/edit?usp=sharing&ouid=110883002193779834389&rtpof=true&sd=true)
+
+- **Sprint board update**: Sprint board screenshotları:
+
+ ![uc3](https://github.com/seHuzeyfe/libvary_app/assets/85116009/a31cc058-e007-4085-ac77-9b21f3f0113e)
+
+
+- **Ürün Durumu**: Ekran görüntüleri:
+
+  ![bir](https://github.com/seHuzeyfe/libvary_app/assets/85116009/b1ef7eb8-de36-4a39-949c-fc3ea264ad1a)
+  ![beş](https://github.com/seHuzeyfe/libvary_app/assets/85116009/fd803cdd-1fc9-4585-a0ab-3e3b74a7639a)
+  ![iki](https://github.com/seHuzeyfe/libvary_app/assets/85116009/7b5aad40-697f-4766-9bfc-915eeff33621)
+  ![üç](https://github.com/seHuzeyfe/libvary_app/assets/85116009/f6b98f40-0eb8-4db2-b68c-f61b252de75e)
+  ![dört](https://github.com/seHuzeyfe/libvary_app/assets/85116009/1756a1b3-539f-4f27-bfda-f750798c0234)
+  ![altı](https://github.com/seHuzeyfe/libvary_app/assets/85116009/8faffbfc-ea27-4ce5-a2d8-b0264e3b2328)
+
+
+  
+- **Sprint Review**: Uygulamanın temel sayfaları tamamlandı ve Firebase bağlantıları yapıldı. Tamamlanamayan işlerin üzerine konuşuldu ve uygulamanın demo versiyonu test edildi. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
+
+- **Sprint Retrospective:**
+
+  - Takım üyelerinin, yer almaları muhtemel, gelecek projelerde daha fazla aktif olmaları gerektiğine vurgu yapıldı.
