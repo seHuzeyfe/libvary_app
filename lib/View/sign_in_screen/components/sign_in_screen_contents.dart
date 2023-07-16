@@ -111,12 +111,12 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
               text: "Giriş Yap",
               press: () async{
-                bool isvalid;
+                bool isvalid = false;
                 isvalid = _formKey.currentState!.validate();
-                if (isvalid) {
+                  if (isvalid) {
                   _formKey.currentState!.save();
                   await signInWithEmailAndPassword();
-                  /*showModalBottomSheet(
+                  showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
                         return
@@ -151,7 +151,7 @@ class _SignFormState extends State<SignForm> {
                             )
                           ]),
                         );
-                      });*/
+                      });
                 await Future.delayed(Duration(seconds: 2));
                 Navigator.pushNamed(context, MainNavigationBar.routeName);
               }
@@ -208,14 +208,14 @@ class _SignFormState extends State<SignForm> {
             errors.add(kEmailNullError);
           }
           );
-          return;
-        } else if (value.length < 0 &&
+          return  "";
+        } else if (value.isEmpty &&
             !emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
             setState(() {
             errors.add(kInvalidEmailError);
           });
-            return;
+            return  "";
         }
         return null;
         },
@@ -250,16 +250,17 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kPassNullError);
           });
-          return;
-        } else if (value.length > 0 &&
+          return  "";
+        } else if (value.isNotEmpty &&
             value.length < 8 &&
             !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
-          });
-          return;
+          }
+          );
+          return  "";
         }
-          return null;
+         return null;
       },
       obscureText: true,
       decoration: InputDecoration(

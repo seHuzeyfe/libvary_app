@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:libvary_app/constants.dart';
 import '../../../components/default_button.dart';
+import '../../../controller/authentication.dart';
 import '../../../controller/google_sign_in.dart';
+import '../../../navigation_bar.dart';
 import '../../../size_config.dart';
 import '../../sign_in_screen/components/sign_in_screen_contents.dart';
 
@@ -57,6 +60,20 @@ class _SignUpFormState extends State<SignUpForm> {
   String email = "";
   String password = "";
   String confirmPassword = "";
+  String? errorMessage = "";
+
+  Future<void> createUserWithEmailAndPassword() async {
+    try{
+      await Auth().createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    }on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -77,10 +94,21 @@ class _SignUpFormState extends State<SignUpForm> {
             SizedBox(height: getProportionateScreenHeight(30)),
             DefaultButton(
                 text: "Devam Et",
-                press: () {
-                  if (_formKey.currentState!.validate()) {
+                press: () async{
+                  bool isvalid = false;
+                  isvalid = _formKey.currentState!.validate();
+                  if (isvalid) {
                     _formKey.currentState!.save();
-                  }
+                      if(password == confirmPassword) {
+                        await createUserWithEmailAndPassword();
+                        await Future.delayed(Duration(seconds: 2));
+                        Navigator.pushNamed(
+                            context, MainNavigationBar.routeName);
+                      }}
+                  else
+                    {
+                      return null;
+                    }
                 }),
             SizedBox(height: getProportionateScreenHeight(40)),
             GoogleSign(),
@@ -102,22 +130,21 @@ class _SignUpFormState extends State<SignUpForm> {
             errors.remove(kInvalidEmailError);
           });
         }
-
-        return null;
       },
       validator: (value) {
         if (value!.isEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (value.length > 0 &&
             !emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+          return "";
         }
-
         return null;
       },
       keyboardType: TextInputType.emailAddress,
@@ -151,12 +178,14 @@ class _SignUpFormState extends State<SignUpForm> {
           setState(() {
             errors.add(kPassNullError);
           });
+          return "";
         } else if (value.length > 0 &&
             value.length < 8 &&
             !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return "";
         }
         return null;
       },
@@ -182,15 +211,14 @@ class _SignUpFormState extends State<SignUpForm> {
         if (password == confirmPassword) {
           setState(() {
             errors.remove(kMatchPassError);
-          });}
-          else if (value != null)
+          });
+        }
+          else if (value.isNotEmpty)
             {
               setState(() {
                 errors.remove(kPasswordAgain);
               });
             }
-
-        return null;
       },
       validator: (value) {
         if (!errors.contains(kPasswordAgain))
@@ -200,11 +228,13 @@ class _SignUpFormState extends State<SignUpForm> {
           setState(() {
             errors.add(kPasswordAgain);
           });
+          return "";
         } else if (password != confirmPassword && !errors.contains(kMatchPassError)) {
           setState(() {
             errors.add(kMatchPassError);
           });
-        }
+          return "";
+          }
         return null;
       },
       obscureText: true,

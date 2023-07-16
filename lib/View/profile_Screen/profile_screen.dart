@@ -48,6 +48,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
+                ProfileMenu(
+                  text: "My Account",
+                  icon: "assets/icons/User Icon.svg",
+                  press: () => {},
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -79,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       Card(
                         child: Container(
-                          height: 130,
+                          height: 150,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -95,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Card(
                         child: Container(
-                          height: 130,
+                          height: 150,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -111,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Card(
                         child: Container(
-                          height: 130,
+                          height: 150,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -147,16 +152,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 80),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ProfileMenu(
-                  text: "My Account",
-                  icon: "assets/icons/User Icon.svg",
-                  press: () => {},
-                ),
             Visibility(
               visible: !isUserSignedIn(),
                   child: ProfileMenu(

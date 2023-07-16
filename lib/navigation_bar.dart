@@ -1,10 +1,10 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/View/wishlist_screen/wishlist_screen.dart';
-import 'package:libvary_app/controller/authentication.dart';
 import 'package:libvary_app/size_config.dart';
 import 'View/chat_screen/main_chat_screen.dart';
 import 'View/profile_Screen/profile_screen.dart';
@@ -138,8 +138,11 @@ class SuffixIconNavBar extends StatelessWidget {
 }
 
 profilePicture(){
+  var user = FirebaseAuth.instance.currentUser?.photoURL;
   if(isUserSignedIn()){
-    return NetworkImage(getUserInfo("photo"));
+     if(user != null){
+       return NetworkImage(getUserInfo("photo"));
+     }
   }
   else {
     return AssetImage("assets/images/profile_screen.png");
