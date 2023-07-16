@@ -5,8 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:libvary_app/View/profile_Screen/profile_menu.dart';
-
-import '../../utilities/google_sign_in.dart';
+import '../../controller/google_sign_in.dart';
 import '../sign_in_screen/sign_in_screen.dart';
 
 

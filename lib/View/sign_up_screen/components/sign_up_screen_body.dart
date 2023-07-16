@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:libvary_app/constants.dart';
 import '../../../components/default_button.dart';
+import '../../../controller/google_sign_in.dart';
 import '../../../size_config.dart';
-import '../../../utilities/google_sign_in.dart';
 import '../../sign_in_screen/components/sign_in_screen_contents.dart';
 
 class Body extends StatefulWidget {

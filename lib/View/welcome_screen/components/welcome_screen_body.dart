@@ -1,11 +1,11 @@
-
+import '../../../controller/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:libvary_app/View/sign_in_screen/sign_in_screen.dart';
 import 'package:libvary_app/navigation_bar.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
 import '../../../components/default_button.dart';
-import '../../../utilities/google_sign_in.dart';
+import '../../../controller/google_sign_in.dart';
 import 'welcome_screen_content.dart';
 //Düzenli kod için best practice uygulandı...
 
@@ -78,6 +78,7 @@ class _BodyState extends State<Body> {
                         else Navigator.pushNamed(context, SignInScreen.routeName);
                       }),
                       Spacer(),
+                      TextButton(onPressed: signOutWithGoogle, child: Text("çıkış yap"))
                     ],
                   ),
                 )),

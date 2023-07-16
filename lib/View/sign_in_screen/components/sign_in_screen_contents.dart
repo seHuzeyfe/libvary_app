@@ -1,8 +1,12 @@
+import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:libvary_app/navigation_bar.dart';
 import 'package:libvary_app/size_config.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
+import '../../../controller/authentication.dart';
 import '../../forget_password_screen/forget_password_screen.dart';
 
 
@@ -65,10 +69,26 @@ class SignForm extends StatefulWidget {
   State<SignForm> createState() => _SignFormState();
 }
 
+
 class _SignFormState extends State<SignForm> {
+
   String email = "";
   String password = "";
   bool remember = false;
+  String? errorMessage = "";
+
+  Future<void> signInWithEmailAndPassword() async {
+    try{
+      await Auth().signInWithEmailAndPassword(
+          email: email,
+          password: password,
+      );
+    }on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,13 +110,17 @@ class _SignFormState extends State<SignForm> {
           ),
           DefaultButton(
               text: "Giriş Yap",
-              press: () {
-                if (_formKey.currentState!.validate()) {
+              press: () async{
+                bool isvalid;
+                isvalid = _formKey.currentState!.validate();
+                if (isvalid) {
                   _formKey.currentState!.save();
-                  showModalBottomSheet(
+                  await signInWithEmailAndPassword();
+                  /*showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
-                        return Container(
+                        return
+                          Container(
                           height: getProportionateScreenHeight(250),
                           decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -127,9 +151,12 @@ class _SignFormState extends State<SignForm> {
                             )
                           ]),
                         );
-                      });
-                }
-              }),
+                      });*/
+                await Future.delayed(Duration(seconds: 2));
+                Navigator.pushNamed(context, MainNavigationBar.routeName);
+              }
+              }
+              ),
           Row(
             children: [
               Checkbox(
@@ -161,6 +188,7 @@ class _SignFormState extends State<SignForm> {
 
   emailFormBody() {
     return TextFormField(
+      onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {
           setState(() {
@@ -173,23 +201,24 @@ class _SignFormState extends State<SignForm> {
           });
         }
 
-        return null;
       },
       validator: (value) {
-        if (value!.isEmpty && !errors.contains(kEmailNullError)) {
+        if (value!.isEmpty  && !errors.contains(kEmailNullError)) {
           setState(() {
             errors.add(kEmailNullError);
-          });
-        } else if (value.length > 0 &&
+          }
+          );
+          return;
+        } else if (value.length < 0 &&
             !emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
-          setState(() {
+            setState(() {
             errors.add(kInvalidEmailError);
           });
+            return;
         }
-
         return null;
-      },
+        },
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         //dekorasyon theme dosyasının içinde düzenlendi
@@ -217,18 +246,20 @@ class _SignFormState extends State<SignForm> {
         }
       },
       validator: (value) {
-        if (value!.isEmpty && !errors.contains(kPassNullError)) {
+        if (value!.isEmpty  && !errors.contains(kPassNullError)) {
           setState(() {
             errors.add(kPassNullError);
           });
+          return;
         } else if (value.length > 0 &&
             value.length < 8 &&
             !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return;
         }
-        return null;
+          return null;
       },
       obscureText: true,
       decoration: InputDecoration(

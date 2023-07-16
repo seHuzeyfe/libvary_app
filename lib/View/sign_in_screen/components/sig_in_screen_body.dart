@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:libvary_app/View/sign_up_screen/sign_up_screen.dart';
 import 'package:libvary_app/constants.dart';
 import 'package:libvary_app/size_config.dart';
-import '../../../utilities/google_sign_in.dart';
+import '../../../controller/google_sign_in.dart';
 import 'sign_in_screen_contents.dart';
 import 'package:libvary_app/navigation_bar.dart';
 
