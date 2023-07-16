@@ -12,7 +12,7 @@ class ChatListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chats',style: TextStyle(fontSize: 22.0),),
+        title: Text('Mesajlar'),
       ),
       body: ListView.builder(
         itemCount: previousChats.length,

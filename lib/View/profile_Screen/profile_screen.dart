@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:libvary_app/View/profile_Screen/profile_menu.dart';
 
 import '../../utilities/google_sign_in.dart';
 import '../sign_in_screen/sign_in_screen.dart';
@@ -40,104 +41,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           SizedBox(height: 20),
 
+
+          const SizedBox(height: 10),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            height: 100,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding:EdgeInsets.all(15.0),
-                  child: Text(
-                    'Kategoriler',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                side: const BorderSide(color: Colors.black),
-                              ) ,
-                            ),
-                          ),
-                          child: const Text('Edebiyat'),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                side: BorderSide(color: Colors.black),
-                              ),
-                            ),
-                          ),
-                          child: const Text('Polisiye'),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                side: const BorderSide(color: Colors.black),
-                              ) ,
-                            ),
-                          ),
-                          child: const Text('Roman'),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                                side: const BorderSide(color: Colors.black),
-                              ) ,
-                            ),
-                          ),
-                          child: const Text('YKS'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
+            margin: EdgeInsets.symmetric(horizontal: 10),
             height: 200,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -146,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Padding(
-                      padding:EdgeInsets.fromLTRB(0, 0, 50, 0),
+                      padding:EdgeInsets.fromLTRB(0, 0, 100, 0),
                       child: Text(
                         'Kitaplarım',
                         style: TextStyle(
@@ -162,7 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: const Text(
                         'Tümünü Gör',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ],
@@ -173,7 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       Card(
                         child: Container(
-                          height: 150,
+                          height: 130,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -189,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Card(
                         child: Container(
-                          height: 150,
+                          height: 130,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -205,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Card(
                         child: Container(
-                          height: 150,
+                          height: 130,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -221,7 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Card(
                         child: Container(
-                          height: 150,
+                          height: 130,
                           width: 150,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -246,9 +153,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               SignOutButton(),
-                SignInButton(),
-              ],
+                ProfileMenu(
+                  text: "My Account",
+                  icon: "assets/icons/User Icon.svg",
+                  press: () => {},
+                ),
+            Visibility(
+              visible: !isUserSignedIn(),
+                  child: ProfileMenu(
+                    text: "Log In",
+                    icon: "assets/icons/Log out.svg",
+                    press: () {
+                      Navigator.pushNamed(context, SignInScreen.routeName);
+                    },
+                  ),
+                ),
+                Visibility(
+                  visible: isUserSignedIn(),
+                  child: ProfileMenu(
+                    text: "Log Out",
+                    icon: "assets/icons/Log out.svg",
+                    press: ()async{
+                await signOutWithGoogle();
+                Navigator.pushNamed(context, SignInScreen.routeName);
+                },
+                  ),
+                ),
+            ],
             ),
           ),
         ],
