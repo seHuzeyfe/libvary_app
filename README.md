@@ -144,7 +144,7 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 # Sprint 3
 
-- **Sprint Notları**: Ürünün 25 Backlogundan 10 tanesi üçüncü sprintte alınmıştır ve 7 tanesi tamamlanıp 3 tanesi tamamlanamamıştır.
+- **Sprint Notları**: Ürünün 25 Backlogundan 10 tanesi üçüncü sprintte alınmıştır ve 7 tanesi tamamlanıp 3 tanesi iptal edilmiştir.Ürün genel hatlarıyla tamamlanmıştır ve çalışır haldedir.
 
 - **Sprint içinde tamamlanması tahmin edilen puan**: 130 Puan
 
@@ -169,8 +169,11 @@ Libvary, güncel ekonomik koşullar sebebiyle kitaplara, özellikle sınavlara h
 
 
   
-- **Sprint Review**: Uygulamanın temel sayfaları tamamlandı ve Firebase bağlantıları yapıldı. Tamamlanamayan işlerin üzerine konuşuldu ve uygulamanın demo versiyonu test edildi. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz, Olgun Çelikel.
+- **Sprint Review**: Uygulamanın temel sayfaları tamamlandı ve Firebase bağlantıları yapıldı. İptal edilen backlogların üzerine konuşuldu ve uygulamanın demo versiyonu test edildi.Ürün sunum videosu kurgulandı. Sprint Review katılımcıları: Huzeyfe Bıçakçı, Emre Eyüpoğlu, Eda Nur Korkusuz.
 
 - **Sprint Retrospective:**
 
-  - Takım üyelerinin, yer almaları muhtemel, gelecek projelerde daha fazla aktif olmaları gerektiğine vurgu yapıldı.
+  - Takım üyelerinin aktifliğindeki eksiklik konuşuldu.
+  - İletişimde yaşanan kopmalar,mesajlara cevap vermeme,toplantılara katılmama nedenleri tartışıldı.
+  - Bazı takım üyelerinin projeye gerekli değeri vermediği ve çalışma yapmadığı anlaşıldı.
+  - Takım üyelerinin teknik konulardaki yetersizliği analiz edildi.
