@@ -75,7 +75,8 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               BottomNavigationBarItem(
                   icon: CircleAvatar(
                       radius: 15,
-                      backgroundImage: profilePicture(),
+                      child: profilePicture(),
+                      backgroundColor: Colors.white,
                           ),
                   label: ""),
             ],
@@ -145,6 +146,11 @@ profilePicture(){
      }
   }
   else {
-    return AssetImage("assets/images/profile_screen.png");
+    return SvgPicture.asset(
+        "assets/icons/User Icon.svg",
+        color: Colors.black,
+
+
+    );
   }
 }

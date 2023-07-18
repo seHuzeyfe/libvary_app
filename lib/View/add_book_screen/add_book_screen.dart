@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:libvary_app/controller/book_controller.dart';
 
 enum BookCondition {
   newBook,
@@ -18,10 +19,6 @@ enum BookGenre {
   felsefeBook,
 }
 
-enum BookLanguage {
-  turkishBook,
-  englishBook,
-}
 
 class BookAddPage extends StatefulWidget {
   static String routeName = "/BookAddPage";
@@ -33,10 +30,9 @@ class BookAddPage extends StatefulWidget {
 
 class _BookAddPageState extends State<BookAddPage> {
   String bookName = '';
-  String authorName = '';
+  String description = '';
   BookCondition selectedCondition = BookCondition.secondHandBook;
   BookGenre selectedCondition2 = BookGenre.yksBook;
-  BookLanguage selectedCondition3 = BookLanguage.turkishBook;
   File? _imageFile;
 
   Future<void> _pickImage(ImageSource source) async {
@@ -53,9 +49,7 @@ class _BookAddPageState extends State<BookAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -141,7 +135,7 @@ class _BookAddPageState extends State<BookAddPage> {
               TextField(
                 onChanged: (value) {
                   setState(() {
-                    authorName = value;
+                    description = value;
                   });
                 },
                 cursorColor: Colors.grey,
@@ -152,7 +146,7 @@ class _BookAddPageState extends State<BookAddPage> {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey),
                   ),
-                  labelText: 'Yazar İsmi',
+                  labelText: 'Kitap Açıklaması',
                   labelStyle: TextStyle(
                     color: Colors.black54,
                   ),
@@ -215,26 +209,7 @@ class _BookAddPageState extends State<BookAddPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Dil:'),
                   SizedBox(width: 10),
-                  DropdownButton<BookLanguage>(
-                    value: selectedCondition3,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCondition3 = value!;
-                      });
-                    },
-                    items: [
-                      DropdownMenuItem(
-                        value: BookLanguage.turkishBook,
-                        child: Text('Türkçe'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookLanguage.englishBook,
-                        child: Text('İngilizce'),
-                      ),
-                    ],
-                  ),
                 ],
               ),
               SizedBox(height: 16.0),
@@ -269,12 +244,10 @@ class _BookAddPageState extends State<BookAddPage> {
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                 ),
-                onPressed: () {
-                  print('Kitap İsmi: $bookName');
-                  print('Yazar İsmi: $authorName');
-                  print('Kitap Türü: $selectedCondition2');
-                  print('Kitap Dili: $selectedCondition3');
-                  print('Kitap Durumu: $selectedCondition');
+                onPressed: () async {
+                  await addBook(0, "image.png", bookName,
+                      description, false);
+                  await fetchBook();
                 },
                 child: Text('Yayınla'),
               ),

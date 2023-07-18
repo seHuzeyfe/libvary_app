@@ -3,21 +3,21 @@ import '../../../Model/book.dart';
 import 'components.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  final Book book;
 
-  const Body({Key? key, required this.product}) : super(key: key);
+  const Body({Key? key, required this.book}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ProductImages(product: product),
+       BookImages(book: book ),
         TopRoundedContainer(
           color: Colors.white,
           child: Column(
             children: [
-              ProductDescription(
-                product: product,
+              BookDescription(
+                book: book,
                 pressOnSeeMore: () {},
               ),
                   ],

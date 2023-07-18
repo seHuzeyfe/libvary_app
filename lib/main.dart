@@ -3,6 +3,7 @@ import 'package:libvary_app/View/welcome_screen/welcome_screen.dart';
 import 'package:libvary_app/routs.dart';
 import 'components/theme_data.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'controller/book_controller.dart';
 import 'firebase/firebase_options.dart';
 
 void main() async {
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await fetchBook();
   runApp(MyApp());
 }
 

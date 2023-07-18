@@ -5,16 +5,16 @@ import '../View/book_screen/book_screen.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
+class BookCard extends StatelessWidget {
+  const BookCard({
     Key? key,
     this.width = 140,
     this.aspectRetio = 1.02,
-    required this.product,
+    required this.book,
   }) : super(key: key);
 
   final double width, aspectRetio;
-  final Product product;
+  final Book book;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
           onTap: () => Navigator.pushNamed(
             context,
             DetailsScreen.routeName,
-            arguments: ProductDetailsArguments(product: product),
+            arguments: BookDetailsArguments(book: book),
           ),
           child: SingleChildScrollView(
             child: Stack(
@@ -41,14 +41,14 @@ class ProductCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Hero(
-                        tag: product.id.toString(),
-                        child: Image.asset(product.images[0]),
+                        tag: book.id.toString(),
+                        child: Image.network(book.images),
                       ),
                     ),
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    product.title,
+                    book.title,
                     style: TextStyle(color: Colors.black),
                     maxLines: 2,
                   ),
@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
                         height: getProportionateScreenWidth(28),
                         width: getProportionateScreenWidth(28),
                         decoration: BoxDecoration(
-                          color: product.isFavourite
+                          color: book.isFavorite
                               ? kPrimaryColor.withOpacity(0.15)
                               : kSecondaryColor.withOpacity(0.1),
                           shape: BoxShape.circle,
@@ -73,7 +73,7 @@ class ProductCard extends StatelessWidget {
                         child: SvgPicture.asset(
                           "assets/icons/Heart Icon_2.svg",
                          // ignore: deprecated_member_use
-                          color: product.isFavourite
+                          color:book.isFavorite
                               ? Color(0xFFFF4848)
                               : Color(0xFFDBDEE4),
                         ),

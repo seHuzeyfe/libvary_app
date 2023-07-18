@@ -1,10 +1,14 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:libvary_app/View/profile_Screen/profile_menu.dart';
+import 'package:libvary_app/navigation_bar.dart';
+import 'package:libvary_app/size_config.dart';
+import '../../Model/book.dart';
+import '../../components/book_card.dart';
 import '../../controller/google_sign_in.dart';
 import '../sign_in_screen/sign_in_screen.dart';
 
@@ -31,20 +35,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           imageProfile(),
           Center(
-            child:Text('İsim Soyisim',
+            child:Text(isUserSignedIn() ? getUserInfo("name") : "",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
           ),
-          SizedBox(height: 20),
-
-
-          const SizedBox(height: 10),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            height: 200,
+            margin: EdgeInsets.symmetric(horizontal: 5),
+            height: 300,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
@@ -53,98 +53,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   icon: "assets/icons/User Icon.svg",
                   press: () => {},
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Padding(
-                      padding:EdgeInsets.fromLTRB(0, 0, 100, 0),
-                      child: Text(
-                        'Kitaplarım',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed:(){},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                      ),
-                      child: const Text(
-                        'Tümünü Gör',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ],
+                SizedBox(height: getProportionateScreenHeight(10),),
+                Text(
+                  'Kitaplarım',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                  ),
                 ),
+                SizedBox(height: getProportionateScreenHeight(15),),
                 Expanded(
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Card(
-                        child: Container(
-                          height: 150,
-                          width: 150,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            color: Colors.black,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/kitap1.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                          height: 150,
-                          width: 150,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            color: Colors.black,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/kitap2.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                          height: 150,
-                          width: 150,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            color: Colors.black,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/kitap3.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                          height: 130,
-                          width: 150,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            color: Colors.black,
-                            image:DecorationImage(
-                              image: AssetImage('assets/images/kitap4.png'),
-                              fit:BoxFit.cover,
-                            ),
-                          ),
-                        ),
+                      ...List.generate(
+                        books.length,
+                            (index) {
+                          return BookCard(book: books[index]);
+                        },
                       ),
                     ],
                   ),
@@ -152,15 +79,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 80),
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                SizedBox(height: getProportionateScreenHeight(20),),
             Visibility(
               visible: !isUserSignedIn(),
                   child: ProfileMenu(
-                    text: "Log In",
+                    text: "   Giriş Yap",
                     icon: "assets/icons/Log out.svg",
                     press: () {
                       Navigator.pushNamed(context, SignInScreen.routeName);
@@ -170,7 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Visibility(
                   visible: isUserSignedIn(),
                   child: ProfileMenu(
-                    text: "Log Out",
+                    text: "Çıkış Yap",
                     icon: "assets/icons/Log out.svg",
                     press: ()async{
                 await signOutWithGoogle();
@@ -195,10 +122,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 100,
               width: 100,
               child: CircleAvatar(
+                backgroundColor: Colors.grey,
                 radius: 40,
-                backgroundImage: _imageFile==null
-                    ?AssetImage('assets/images/profile_screen.png')
-                    :FileImage(File(_imageFile!.path)) as ImageProvider,
+                child: profilePicture(),
               ),
             ),
         Positioned(
@@ -216,7 +142,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 foregroundColor: Colors.white,
                 backgroundColor: Color(0xFFF5F6F9),
               ),
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: ((build)=> bottomSheet()),
+                );
+              },
               child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
             ),
           ),

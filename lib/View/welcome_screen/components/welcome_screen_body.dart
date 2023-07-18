@@ -70,15 +70,18 @@ class _BodyState extends State<Body> {
                         ),
                       ),
                       Spacer(flex: 3),
-                      DefaultButton(text: "Devam Et", press: () {
-                        if(isUserSignedIn()) //giriş yapıldı mı kontrrolü
-                          {
-                            Navigator.pushNamed(context, MainNavigationBar.routeName);
-                          }
-                        else Navigator.pushNamed(context, SignInScreen.routeName);
-                      }),
+                      DefaultButton(
+                          text: "Devam Et",
+                          press: () {
+                            if (isUserSignedIn()) //giriş yapıldı mı kontrrolü
+                            {
+                              Navigator.pushNamed(
+                                  context, MainNavigationBar.routeName);
+                            } else
+                              Navigator.pushNamed(
+                                  context, SignInScreen.routeName);
+                          }),
                       Spacer(),
-                      TextButton(onPressed: signOutWithGoogle, child: Text("çıkış yap"))
                     ],
                   ),
                 )),
@@ -100,5 +103,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
-

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import '../../Model/book.dart';
 import '../../components/book_card.dart';
 import '../../size_config.dart';
+import 'package:libvary_app/controller/book_controller.dart';
 
 class WishListScreen extends StatelessWidget {
+
   static String routeName = "/WishLisScreen";
   const WishListScreen({
     super.key,
@@ -29,9 +31,9 @@ class WishListScreen extends StatelessWidget {
           // Generate 100 widgets that display their index in the List.
           children: [
             ...List.generate(
-              demoProducts.length,
+              books.length,
               (index) {
-                return ProductCard(product: demoProducts[index]);
+                return BookCard(book: books[index]);
               },
             ),
           ]),

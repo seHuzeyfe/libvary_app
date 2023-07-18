@@ -10,20 +10,20 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailsArguments agrs =
-    ModalRoute.of(context)!.settings.arguments as ProductDetailsArguments;
+    final BookDetailsArguments agrs =
+    ModalRoute.of(context)!.settings.arguments as BookDetailsArguments;
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
       appBar: AppBar(
 
       ),
-      body: Body(product: agrs.product),
+      body: Body(book: agrs.book),
     );
   }
 }
 
-class ProductDetailsArguments {
-  final Product product;
+class BookDetailsArguments {
+  final Book book;
 
-  ProductDetailsArguments({required this.product});
+  BookDetailsArguments({required this.book});
 }

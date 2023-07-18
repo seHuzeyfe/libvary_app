@@ -18,13 +18,14 @@ class _BodyState extends State<Body> {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(30)),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: getProportionateScreenWidth(10),
             ),
             child: Row(
               children: [
+                SizedBox(width: getProportionateScreenWidth(25),),
                  Container(
                    width: SizeConfig.screenWidth * 0.8 ,
                    height: 40,

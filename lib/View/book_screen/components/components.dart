@@ -8,14 +8,14 @@ import '../../../size_config.dart';
 
 
 
-class ProductDescription extends StatelessWidget {
-  const ProductDescription({
+class BookDescription extends StatelessWidget {
+  const BookDescription({
     Key? key,
-    required this.product,
+    required this.book,
     this.pressOnSeeMore,
   }) : super(key: key);
 
-  final Product product;
+  final Book book;
   final GestureTapCallback? pressOnSeeMore;
 
   @override
@@ -27,7 +27,7 @@ class ProductDescription extends StatelessWidget {
           padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
-            product.title,
+            book.title,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -38,7 +38,7 @@ class ProductDescription extends StatelessWidget {
             width: getProportionateScreenWidth(64),
             decoration: BoxDecoration(
               color:
-              product.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
+              book.isFavorite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
@@ -47,7 +47,7 @@ class ProductDescription extends StatelessWidget {
             child: SvgPicture.asset(
               "assets/icons/Heart Icon_2.svg",
               color:
-              product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+              book.isFavorite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
               height: getProportionateScreenWidth(16),
             ),
           ),
@@ -58,7 +58,7 @@ class ProductDescription extends StatelessWidget {
             right: getProportionateScreenWidth(64),
           ),
           child: Text(
-            product.description,
+            book.description,
             maxLines: 3,
           ),
         ),
@@ -67,19 +67,19 @@ class ProductDescription extends StatelessWidget {
     );
   }
 }
-class ProductImages extends StatefulWidget {
-  const ProductImages({
+class BookImages extends StatefulWidget {
+  const BookImages({
     Key? key,
-    required this.product,
+    required this.book,
   }) : super(key: key);
 
-  final Product product;
+  final Book book;
 
   @override
-  _ProductImagesState createState() => _ProductImagesState();
+  _BookImagesState createState() => _BookImagesState();
 }
 
-class _ProductImagesState extends State<ProductImages> {
+class _BookImagesState extends State<BookImages> {
   int selectedImage = 0;
   @override
   Widget build(BuildContext context) {
@@ -90,8 +90,8 @@ class _ProductImagesState extends State<ProductImages> {
           child: AspectRatio(
             aspectRatio: 1,
             child: Hero(
-              tag: widget.product.id.toString(),
-              child: Image.asset(widget.product.images[selectedImage]),
+              tag: widget.book.id.toString(),
+              child: Image.network(widget.book.images),
             ),
           ),
         ),
@@ -99,7 +99,7 @@ class _ProductImagesState extends State<ProductImages> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ...List.generate(widget.product.images.length,
+            ...List.generate(1,
                     (index) => buildSmallProductPreview(index)),
           ],
         )
@@ -126,7 +126,7 @@ class _ProductImagesState extends State<ProductImages> {
           border: Border.all(
               color: kPrimaryColor.withOpacity(selectedImage == index ? 1 : 0)),
         ),
-        child: Image.asset(widget.product.images[index]),
+        child: Image.network(widget.book.images),
       ),
     );
   }
