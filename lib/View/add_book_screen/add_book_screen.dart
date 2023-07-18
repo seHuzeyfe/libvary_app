@@ -1,7 +1,10 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:libvary_app/controller/book_controller.dart';
+
+import '../../controller/book_controller.dart';
 
 enum BookCondition {
   newBook,
@@ -19,9 +22,9 @@ enum BookGenre {
   felsefeBook,
 }
 
-
 class BookAddPage extends StatefulWidget {
   static String routeName = "/BookAddPage";
+
   const BookAddPage({super.key});
 
   @override
@@ -29,7 +32,32 @@ class BookAddPage extends StatefulWidget {
 }
 
 class _BookAddPageState extends State<BookAddPage> {
-  String bookName = '';
+  String? imageUrl;
+
+  Future<void> uploadImageToFirebase(File imageFile) async {
+    if (imageFile != null) {
+      String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+      Reference reference = FirebaseStorage.instance
+          .ref()
+          .child('kitapilanresimleri')
+          .child(fileName);
+
+      UploadTask uploadTask = reference.putFile(imageFile);
+      TaskSnapshot snapshot = await uploadTask;
+
+      if (snapshot.state == TaskState.success) {
+        String downloadUrl = await snapshot.ref.getDownloadURL();
+        setState(() {
+          imageUrl = downloadUrl;
+        });
+        print('Fotoğraf başarıyla yüklendi: $downloadUrl');
+      } else {
+        print('Fotoğraf yükleme hatası: ${snapshot.state}');
+      }
+    }
+  }
+
+  String title = '';
   String description = '';
   BookCondition selectedCondition = BookCondition.secondHandBook;
   BookGenre selectedCondition2 = BookGenre.yksBook;
@@ -49,14 +77,16 @@ class _BookAddPageState extends State<BookAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("İlan Ekle"),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 10.0),
               GestureDetector(
                 onTap: () {
                   showDialog(
@@ -64,7 +94,6 @@ class _BookAddPageState extends State<BookAddPage> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: Text('Fotoğraf Ekle'),
-                        //content: Text(''),
                         actions: [
                           TextButton(
                             onPressed: () {
@@ -93,42 +122,35 @@ class _BookAddPageState extends State<BookAddPage> {
                     color: Colors.grey[200],
                     image: _imageFile != null
                         ? DecorationImage(
-                            image: FileImage(_imageFile!),
-                            fit: BoxFit.cover,
-                          )
+                      image: FileImage(_imageFile!),
+                      fit: BoxFit.cover,
+                    )
                         : null,
                   ),
                   child: _imageFile == null
                       ? Icon(
-                          Icons.camera_alt,
-                          size: 80,
-                          color: Colors.grey[400],
-                        )
+                    Icons.camera_alt,
+                    size: 80,
+                    color: Colors.grey[400],
+                  )
                       : null,
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 32.0),
               TextField(
                 onChanged: (value) {
                   setState(() {
-                    bookName = value;
+                    title = value;
                   });
                 },
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
+                  border: OutlineInputBorder(),
                   labelText: 'Kitap İsmi',
                   labelStyle: TextStyle(
                     color: Colors.black54,
                   ),
-                  contentPadding: EdgeInsets.zero,
-                  isDense: true,
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  hintText: 'Açıklama Yazınız',
                 ),
               ),
               SizedBox(height: 16.0),
@@ -140,68 +162,75 @@ class _BookAddPageState extends State<BookAddPage> {
                 },
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  labelText: 'Kitap Açıklaması',
+                  border: OutlineInputBorder(),
+                  labelText: 'Yazar İsmi',
                   labelStyle: TextStyle(
                     color: Colors.black54,
                   ),
-                  contentPadding: EdgeInsets.zero,
-                  isDense: true,
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  hintText: 'Yazar ismini giriniz',
                 ),
               ),
               SizedBox(height: 16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Tür:'),
-                  SizedBox(width: 10),
-                  DropdownButton<BookGenre>(
-                    value: selectedCondition2,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCondition2 = value!;
-                      });
-                    },
-                    items: [
-                      DropdownMenuItem(
-                        value: BookGenre.yksBook,
-                        child: Text('YKS'),
+                  Expanded(
+                    child: DropdownButtonFormField<BookGenre>(
+                      hint: const Text('Kitap türünü seçiniz'),
+                      value: selectedCondition2 != BookGenre.yksBook
+                          ? selectedCondition2
+                          : null,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedCondition2 = value!;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        suffixIcon: Icon(
+                          Icons.menu_book_rounded,
+                          color: Colors.black54,
+                        ),
+                        labelText: 'Kitap Türü',
+                        labelStyle: TextStyle(
+                          color: Colors.black54,
+                        ),
                       ),
-                      DropdownMenuItem(
-                        value: BookGenre.tusBook,
-                        child: Text('TUS'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.kpssBook,
-                        child: Text('KPSS'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.alesBook,
-                        child: Text('ALES'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.dgsBook,
-                        child: Text('DGS'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.lgsBook,
-                        child: Text('LGS'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.romanBook,
-                        child: Text('Roman'),
-                      ),
-                      DropdownMenuItem(
-                        value: BookGenre.felsefeBook,
-                        child: Text('Felsefe'),
-                      ),
-                    ],
+                      items: [
+                        DropdownMenuItem(
+                          value: BookGenre.yksBook,
+                          child: Text('YKS'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.tusBook,
+                          child: Text('TUS'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.kpssBook,
+                          child: Text('KPSS'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.alesBook,
+                          child: Text('ALES'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.dgsBook,
+                          child: Text('DGS'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.lgsBook,
+                          child: Text('LGS'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.romanBook,
+                          child: Text('Roman'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookGenre.felsefeBook,
+                          child: Text('Felsefe'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -209,47 +238,66 @@ class _BookAddPageState extends State<BookAddPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 10),
-                ],
-              ),
-              SizedBox(height: 16.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Durum:'),
-                  SizedBox(width: 10),
-                  DropdownButton<BookCondition>(
-                    value: selectedCondition,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCondition = value!;
-                      });
-                    },
-                    items: [
-                      DropdownMenuItem(
-                        value: BookCondition.newBook,
-                        child: Text('Yeni'),
+                  Expanded(
+                    child: DropdownButtonFormField<BookCondition>(
+                      hint: const Text('Kitap durumunu seçiniz'),
+                      value: selectedCondition != BookCondition.secondHandBook
+                          ? selectedCondition
+                          : null,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedCondition = value!;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        suffixIcon: Icon(
+                          Icons.menu_book_rounded,
+                          color: Colors.black54,
+                        ),
+                        labelText: 'Kitap Durumu',
+                        labelStyle: TextStyle(
+                          color: Colors.black54,
+                        ),
                       ),
-                      DropdownMenuItem(
-                        value: BookCondition.secondHandBook,
-                        child: Text('İkinci El'),
-                      ),
-                    ],
+                      items: [
+                        DropdownMenuItem(
+                          value: BookCondition.newBook,
+                          child: Text('Yeni'),
+                        ),
+                        DropdownMenuItem(
+                          value: BookCondition.secondHandBook,
+                          child: Text('İkinci El'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 32.0),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
+                  minimumSize: Size(220, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
-                onPressed: () async {
-                  await addBook(0, "image.png", bookName,
-                      description, false);
-                  await fetchBook();
+                onPressed: () {
+                  onPressed: () async {
+                    await addBook(0, "image.png", title,
+                    description, false);
+                    await fetchBook();
+                  };
                 },
-                child: Text('Yayınla'),
+                child: Text(
+                  'Yayınla',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ],
           ),
