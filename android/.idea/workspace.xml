@@ -4,74 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b572fa09-6b37-464d-ab02-d902ae13c1be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="1f5ab448-29e4-4c7a-aa52-88bd9f7abdf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/View/sign_in_screen/components/sig_in_screen_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/View/sign_in_screen/components/sig_in_screen_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/View/sign_in_screen/components/sign_in_screen_contents.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/View/sign_in_screen/components/sign_in_screen_contents.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/View/sign_up_screen/components/sign_up_screen_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/View/sign_up_screen/components/sign_up_screen_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/firebase/authentication.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/utilities/authentication.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/View/chat_screen/main_chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/View/chats_screen/chats_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/View/chat_screen/secondary_chat_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/navigation_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/routs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/routs.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\HUZEYFE\.android\avd\Environment.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\HUZEYFE\.android\avd\Android.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$/app">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="android" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="android" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="android" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="android" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2SRvxl9ibCbRCoZv15iZf0QIp0a" />
+  <component name="ProjectId" id="2SjFuXAabjHPsgQvypsApxwjx6l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,12 +36,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
@@ -151,11 +107,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b572fa09-6b37-464d-ab02-d902ae13c1be" name="Changes" comment="" />
-      <created>1689122456614</created>
+      <changelist id="1f5ab448-29e4-4c7a-aa52-88bd9f7abdf9" name="Changes" comment="" />
+      <created>1689652305450</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1689122456614</updated>
+      <updated>1689652305450</updated>
     </task>
     <servers />
   </component>

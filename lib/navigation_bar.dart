@@ -6,7 +6,7 @@ import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:libvary_app/View/wishlist_screen/wishlist_screen.dart';
 import 'package:libvary_app/size_config.dart';
-import 'View/chat_screen/main_chat_screen.dart';
+import 'View/chats_screen/chats_screen.dart';
 import 'View/profile_Screen/profile_screen.dart';
 import 'controller/google_sign_in.dart';
 
@@ -23,7 +23,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
   List<Widget> pageList = <Widget>[
     //Ekranların listesi
     MainScreen(),
-    ChatListScreen(),
+    ChatsScreen(),
     MainScreen(),
     WishListScreen(),
     ProfileScreen(),
@@ -75,7 +75,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               BottomNavigationBarItem(
                   icon: CircleAvatar(
                       radius: 15,
-                      child: profilePicture(),
+                      backgroundImage: profilePicture(),
                       backgroundColor: Colors.white,
                           ),
                   label: ""),
@@ -141,16 +141,12 @@ class SuffixIconNavBar extends StatelessWidget {
 profilePicture(){
   var user = FirebaseAuth.instance.currentUser?.photoURL;
   if(isUserSignedIn()){
-     if(user != null){
-       return NetworkImage(getUserInfo("photo"));
-     }
+    if(user != null){
+      return NetworkImage(getUserInfo("photo"));
+    }
   }
   else {
-    return SvgPicture.asset(
-        "assets/icons/User Icon.svg",
-        color: Colors.black,
+    return AssetImage("assets/images/USER.png");
 
-
-    );
   }
 }

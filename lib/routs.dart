@@ -2,6 +2,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:libvary_app/View/add_book_screen/add_book_screen.dart';
 import 'package:libvary_app/View/book_screen/book_screen.dart';
+import 'package:libvary_app/View/chats_screen/chats_screen.dart';
 import 'package:libvary_app/View/forget_password_screen/forget_password_screen.dart';
 import 'package:libvary_app/View/main_screen/main_screen.dart';
 import 'package:libvary_app/View/profile_Screen/profile_screen.dart';
@@ -22,4 +23,5 @@ final Map<String , WidgetBuilder> routes ={
   ProfileScreen.routeName : (context) => ProfileScreen(),
   DetailsScreen.routeName : (context) => DetailsScreen(),
   WishListScreen.routeName : (context) => WishListScreen(),
+  ChatsScreen.routeName :(context) => ChatsScreen(),
 };
